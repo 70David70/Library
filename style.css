@@ -2,13 +2,20 @@
     transition: 0.1s linear;
     font-family:'Courier New', Courier, monospace;
 }
+body {
+    margin: 0;
+}
 
 .container {
+    box-sizing: border-box;
     display: grid;
-    padding: 0 1%;
-    /* Todo
-        complete the layout with box model
-    */
+    grid-template-rows: auto 1fr auto;    
+    min-height: 100vh;
+    margin: 0;
+    padding: 5px 10px;
+}
+.container > * {
+    min-height: 0;
 }
 
 nav {
@@ -34,7 +41,15 @@ nav h1 + div {
     color: gray;
 }
 
-
-/* TODO
-    make the books layout with box model
-*/
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+footer a {
+    text-decoration: none;
+}
+footer a:hover{
+    color: black;
+    font-weight: bold;
+}
