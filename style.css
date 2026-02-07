@@ -1,0 +1,40 @@
+* {
+    transition: 0.1s linear;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.container {
+    display: grid;
+    padding: 0 1%;
+    /* Todo
+        complete the layout with box model
+    */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav h1 + div {
+    display: flex;
+    justify-content: end;
+    width: 50%;
+    gap: 2rem;
+}
+.navigation-bar > div button {
+    border: none;
+    border-radius: 1px;
+    color: rgb(19, 12, 12);
+    font-size: 1rem;
+    background: none;
+}
+.navigation-bar > div button:hover{
+    font-size: larger;
+    color: gray;
+}
+
+
+/* TODO
+    make the books layout with box model
+*/
