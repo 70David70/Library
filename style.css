@@ -63,7 +63,7 @@ footer a:hover{
 .content {
  border-top: 2px solid black;
 }
-.content .add {
+.add {
     position: fixed;
     display: flex;
 
@@ -82,7 +82,7 @@ footer a:hover{
     border: 2px solid rgba(59, 48, 48, 0.774);
     cursor: pointer;
 }
-.container .add:hover {
+.add:hover {
     box-shadow: 0 0 10px red;
     font-size: 3rem;
     font-weight: bold;
