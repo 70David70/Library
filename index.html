@@ -18,6 +18,33 @@
                 </div>
             </nav>
             <div class="add">+</div>
+            <div id="popup-background">
+                <div id="popup-create">
+                    <form method="get" id="new-box">
+                        <!-- TODo:
+                         make a label button that the user clicks on to upload a pic
+                         and hide the actual input button because it's ugly
+                         and when the user chooses a pic you get the url(no uploading in frontend).
+                         with the url that the browser generates for the pic you can do whatever with it
+                         change the background
+                         of the label to this pic -->
+                        <input type="file" accept="image/*" id="new-box-image">
+                            <fieldset id="new-box-info">
+    
+                                <label for="get-box-name">Title</label>
+                                <input type="text" id="get-box-name">
+        
+                                <label for="is-completed">DId you complete it?</label>
+                                <input type="checkbox" id="is-completed">
+        
+                                <label for="get-box-pagecount">Number of pages/episodes</label>
+                                <input type="number" id="get-box-pagecount">
+        
+                                <button type="submit" id="new-box-submit"></button>
+                            </fieldset>
+                    </form>
+                </div>
+            </div>
             <div class="content">
                 <div class="box" id="black-box">
                     <div class="book-image"></div>
