@@ -128,6 +128,7 @@ footer a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 #popup-create {
     position: absolute;
@@ -137,20 +138,73 @@ footer a:hover{
     height: 60vh;
     width: 70vw;
     box-sizing: border-box;
-    padding: 10px;
+}
+.pop-nav {
+    width: 100%;
+    height: 7%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: end;
+    background-color: rgb(78, 71, 71);
+}
+.pop-nav div {
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    color: white;
+    width: 2rem;
+}
+.pop-nav div:hover {
+    font-size: larger;
+    background-color: rgb(243, 31, 31);
+    border-radius: 5px;
 }
 
 #new-box {
     display: grid;
-    height: 100%;
+    height: 90%;
     grid-template-columns: 1.2fr 1fr;
     grid-template-rows: 1fr;
     gap: 50px;
     justify-content: space-between;
+    margin-top: 10px;
+}
+#upload-pic {
+    display: none;
 }
 #new-box-image {
-    background-color: red;
+    background-color: rgb(214, 214, 214);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(44, 44, 44);
+}
+#new-box-image:hover {
+    background-color: rgb(233, 233, 233);
 }
 #new-box-info {
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.input-style {
+    display: flex;
+    flex-direction: column;
+}
+fieldset {
+    border: none;
+}
+#new-box-submit {
+    border: 1px solid black;
+    background-color: rgb(168, 187, 206);
+    padding: 5px 10px;
+    font-weight: bold;
+}
+#new-box-submit:hover {
+    background-color: white;
 }

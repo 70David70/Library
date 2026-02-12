@@ -20,6 +20,9 @@
             <div class="add">+</div>
             <div id="popup-background">
                 <div id="popup-create">
+                    <div class="pop-nav">
+                        <div>X</div>
+                    </div>
                     <form method="get" id="new-box">
                         <!-- TODo:
                          make a label button that the user clicks on to upload a pic
@@ -28,19 +31,33 @@
                          with the url that the browser generates for the pic you can do whatever with it
                          change the background
                          of the label to this pic -->
-                        <input type="file" accept="image/*" id="new-box-image">
+                         <label for="upload-pic" id="new-box-image">
+                            upload a picture
+                         </label>
+                        <input type="file" accept="image/*" id="upload-pic">
                             <fieldset id="new-box-info">
     
-                                <label for="get-box-name">Title</label>
-                                <input type="text" id="get-box-name">
+                                <div class="title-input input-style">
+                                    <label for="get-box-name">Title</label>
+                                    <input type="text" id="get-box-name" placeholder="Example: Titanic">
+                                </div>
+
+                                <div class="author-input input-style">
+                                    <label for="get-box-author">Author</label>
+                                    <input type="text" id="get-box-author" placeholder="Example: james Cameron">
+                                </div>
         
-                                <label for="is-completed">DId you complete it?</label>
-                                <input type="checkbox" id="is-completed">
+                                <div class="completed-input">
+                                    <label for="is-completed">DId you complete it?</label>
+                                    <input type="checkbox" id="is-completed">
+                                </div>
         
-                                <label for="get-box-pagecount">Number of pages/episodes</label>
-                                <input type="number" id="get-box-pagecount">
+                                <div class="pages-input input-style">
+                                    <label for="get-box-pagecount">Number of pages/episodes</label>
+                                    <input type="number" id="get-box-pagecount" placeholder="Example:151">
+                                </div>
         
-                                <button type="submit" id="new-box-submit"></button>
+                                <button type="submit" id="new-box-submit">Create</button>
                             </fieldset>
                     </form>
                 </div>
