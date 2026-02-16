@@ -9,6 +9,10 @@ body {
     margin: 0;
 }
 
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
 .container {
     box-sizing: border-box;
     display: grid;
@@ -95,6 +99,7 @@ footer a:hover{
 }
 
 #placeholder-book {
+    position: relative;
     display: flex;
     gap: 2rem;
     background-color: white;
@@ -155,7 +160,6 @@ footer a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
 }
 #popup-create {
     position: absolute;
@@ -234,4 +238,28 @@ fieldset {
 }
 #new-box-submit:hover {
     background-color: white;
+}
+.book-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+.delete-book {
+    position: absolute;
+    z-index: 2;
+    right: 10px;
+    top: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: larger;
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 50px;
+    color: white;
+    cursor: default;
 }
