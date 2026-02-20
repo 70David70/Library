@@ -196,12 +196,11 @@ footer a:hover{
 
 #new-box {
     display: grid;
-    height: 90%;
+    height: 93%;
     grid-template-columns: 1.2fr 1fr;
     grid-template-rows: 1fr;
     gap: 50px;
     justify-content: space-between;
-    margin-top: 10px;
 }
 #upload-pic {
     display: none;
