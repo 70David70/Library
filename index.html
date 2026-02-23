@@ -18,50 +18,50 @@
                 </div>
             </nav>
             <div id="add" class="add">+</div>
-            <div id="popup-background" class="hidden">
-                <div id="popup-create">
+            <div id="popupBackground" class="hidden">
+                <div id="popupCreate">
                     <div class="pop-nav">
-                        <div id="close-popup">X</div>
+                        <div id="closePopup">X</div>
                     </div>
-                    <form method="get" id="new-box">
+                    <form method="get" id="newBox">
                         <!-- TODo:
                          when the user chooses a pic. you get a url(no uploading in frontend).
                          that the browser generates which you can do whatever u want with it
                          change the background of the label to the pic
                          of the label to this pic -->
-                         <label for="upload-pic" id="new-box-image">
+                         <label for="uploadPic" id="newBoxImage">
                             upload a picture
                          </label>
-                        <input type="file" accept="image/*" id="upload-pic">
-                            <fieldset id="new-box-info">
+                        <input type="file" accept="image/*" id="uploadPic">
+                            <fieldset id="newBoxInfo">
     
                                 <div class="title-input input-style">
-                                    <label for="get-box-name">Title</label>
-                                    <input type="text" id="get-box-name" placeholder="Example: Titanic">
+                                    <label for="getBoxName">Title</label>
+                                    <input type="text" id="getBoxName" placeholder="Example: Titanic" required>
                                 </div>
 
                                 <div class="author-input input-style">
-                                    <label for="get-box-author">Author</label>
-                                    <input type="text" id="get-box-author" placeholder="Example: james Cameron">
+                                    <label for="getBoxAuthor">Author</label>
+                                    <input type="text" id="getBoxAuthor" placeholder="Example: james Cameron" required>
                                 </div>
         
                                 <div class="completed-input">
-                                    <label for="is-completed">DId you complete it?</label>
-                                    <input type="checkbox" id="is-completed">
+                                    <label for="isCompleted">DId you complete it?</label>
+                                    <input type="checkbox" id="isCompleted">
                                 </div>
         
                                 <div class="pages-input input-style">
-                                    <label for="get-box-pagecount">Number of pages/episodes</label>
-                                    <input type="number" id="get-box-pagecount" placeholder="Example:151">
+                                    <label for="getBoxPagecount">Number of pages/episodes</label>
+                                    <input type="number" id="getBoxPagecount" placeholder="Example:151" required>
                                 </div>
         
-                                <button type="submit" id="new-box-submit">Create</button>
+                                <button type="submit" id="newBoxSubmit">Create</button>
                             </fieldset>
                     </form>
                 </div>
             </div>
             <div class="content">
-                <div class="box" id="placeholder-book">
+                <div class="box" id="placeholderBook">
                     <div class="book-overlay hidden">
                         <div class="delete-book">X</div>
                     </div>
