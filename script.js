@@ -8,7 +8,7 @@ TODO:
 */
 let htmlBody = document.querySelector("body")
 let addBtn = document.querySelector(".add")
-let creatingForm = document.querySelector("#popup-background")
+let creatingForm = document.querySelector("#popupBackground")
 
 htmlBody.addEventListener("click", (e)=> {
     let attributeClass = e.target.id;
@@ -17,23 +17,50 @@ htmlBody.addEventListener("click", (e)=> {
     {
         creatingForm.classList.toggle("hidden")
     }
-    else if (attributeClass == "popup-background") {
+    else if (attributeClass == "popupBackground") {
         e.target.classList.toggle("hidden")        
     }
     else if (attributeClass == "delete-box") {
         // TODO delete the corresponding book from array
     }
-    else if (attributeClass == "close-popup") {
-        e.target.closest("#popup-background").classList.toggle("hidden")
+    else if (attributeClass == "closePopup") {
+        e.target.closest("#popupBackground").classList.toggle("hidden")
     }
 })
 htmlBody.addEventListener("mouseover", (e)=> {
-    const book = e.target.closest("#placeholder-book")
+    const book = e.target.closest("#placeholderBook")
     if (!book) return;
     book.querySelector(".book-overlay").classList.remove("hidden");
 })
 htmlBody.addEventListener("mouseout", (e)=> {
-    const book = e.target.closest("#placeholder-book")
+    const book = e.target.closest("#placeholderBook")
     if (!book) return;
     book.querySelector(".book-overlay").classList.add("hidden")
+})
+
+let books = [];
+
+function Book(title, author, readStatus, pageNumber, pagesCompleted, bookPicture) {
+    this.title = title,
+    this.author = author,
+    this.readStatus = readStatus,
+    this.pageNumber = pageNumber,
+    this.pagesCompleted = pagesCompleted,
+    this.bookPicture = bookPicture
+}
+
+let inputForm = document.querySelector("#newBox")
+
+inputForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let input = e.target.elements
+    
+    let title = input.getBoxName.value
+    let author = input.getBoxAuthor.value
+    let readStatus = input.isCompleted.checked
+    let pageNumber = input.getBoxPagecount.value
+    let pagesCompleted = 0
+    let bookPicture = input.uploadPic.value
+    books.push(new Book(title, author, readStatus, pageNumber, pagesCompleted, bookPicture))
+    console.log(books);
 })
