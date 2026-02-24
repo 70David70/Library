@@ -63,4 +63,45 @@ inputForm.addEventListener('submit', function(e) {
     let bookPicture = input.uploadPic.value
     books.push(new Book(title, author, readStatus, pageNumber, pagesCompleted, bookPicture))
     console.log(books);
+    render()
 })
+
+// render time
+function render() {
+    let contentArea = document.querySelector(".content")
+    contentArea.innerHTML = "";
+    for (let i = 0; i < books.length; i++) {
+       let book = books[i];
+       let card = document.createElement("div");
+       card.innerHTML = `
+        <div class="box" id="placeholderBook" data-index="${i}">
+                    <div class="book-overlay hidden">
+                        <div class="delete-book">X</div>
+                    </div>
+                    <img class="book-image" src="${book.bookPicture}"></img>
+                    <div class="book=info">
+                        <div class="book-names">
+                            <h4>${book.title}</h4>
+                            <h6>by ${book.author}</h6>
+                        </div>
+                        <div class="book-progress">
+                            <progress value="${book.pagesCompleted}" max="${book.pageNumber}"></progress>
+                            <div class="book-pages">
+                                <input type="number" value="${book.pagesCompleted}">
+                                <p>/</p>
+                                <input type="number" value="${book.pageNumber}">
+                                <p>pages read</p>
+                            </div>
+                            <div>
+                                <button>-1</button>
+                                <button>+1</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+       `
+       contentArea.appendChild(card)
+    }
+}
+render()
