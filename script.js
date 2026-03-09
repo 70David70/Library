@@ -20,13 +20,17 @@ htmlBody.addEventListener("click", (e)=> {
     else if (attributeClass == "popupBackground") {
         e.target.classList.toggle("hidden")        
     }
-    else if (attributeClass == "delete-box") {
+    else if (e.target.classList.contains("delete-book")) {
         // TODO delete the corresponding book from array
+        let bookIndex = e.target.closest(".box").id
+        books.splice(bookIndex, 1);
+        render()
     }
     else if (attributeClass == "closePopup") {
         e.target.closest("#popupBackground").classList.toggle("hidden")
     }
 })
+
 htmlBody.addEventListener("mouseover", (e)=> {
     const book = e.target.closest(".box")
     if (!book) return;
@@ -74,7 +78,7 @@ function render() {
        let book = books[i];
        let card = document.createElement("div");
        card.innerHTML = `
-        <div class="box" data-index="${i}">
+        <div class="box" id="${i}">
                     <div class="book-overlay hidden">
                         <div class="delete-book">X</div>
                     </div>
