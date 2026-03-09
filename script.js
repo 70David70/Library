@@ -28,12 +28,12 @@ htmlBody.addEventListener("click", (e)=> {
     }
 })
 htmlBody.addEventListener("mouseover", (e)=> {
-    const book = e.target.closest("#placeholderBook")
+    const book = e.target.closest(".box")
     if (!book) return;
     book.querySelector(".book-overlay").classList.remove("hidden");
 })
 htmlBody.addEventListener("mouseout", (e)=> {
-    const book = e.target.closest("#placeholderBook")
+    const book = e.target.closest(".box")
     if (!book) return;
     book.querySelector(".book-overlay").classList.add("hidden")
 })
@@ -74,7 +74,7 @@ function render() {
        let book = books[i];
        let card = document.createElement("div");
        card.innerHTML = `
-        <div class="box" id="placeholderBook" data-index="${i}">
+        <div class="box" data-index="${i}">
                     <div class="book-overlay hidden">
                         <div class="delete-book">X</div>
                     </div>
