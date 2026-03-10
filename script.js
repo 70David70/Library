@@ -3,13 +3,13 @@ let addBtn = document.querySelector(".add")
 let creatingForm = document.querySelector("#popupBackground")
 
 htmlBody.addEventListener("click", (e)=> {
-    let attributeClass = e.target.id;
+    let elementId = e.target.id;
 
-    if (attributeClass == "add")
+    if (elementId == "add")
     {
         creatingForm.classList.toggle("hidden")
     }
-    else if (attributeClass == "popupBackground") {
+    else if (elementId == "popupBackground") {
         e.target.classList.toggle("hidden")        
     }
     else if (e.target.classList.contains("delete-book")) {
@@ -18,8 +18,22 @@ htmlBody.addEventListener("click", (e)=> {
         books.splice(bookIndex, 1);
         render()
     }
-    else if (attributeClass == "closePopup") {
+    else if (elementId == "closePopup") {
         e.target.closest("#popupBackground").classList.toggle("hidden")
+    }
+    else if (elementId == "increase-btn") {
+        let book = e.target.closest(".box")
+        let input = book.querySelector("#current-page-number")
+
+        books[book.id].pagesCompleted = Number(input.value) + 1;
+        render()
+    }
+    else if (elementId == "decrease-btn") {
+        let book = e.target.closest(".box")
+        let input = book.querySelector("#current-page-number")
+
+        books[book.id].pagesCompleted = Number(input.value) - 1;        
+        render()
     }
 })
 
@@ -83,14 +97,14 @@ function render() {
                         <div class="book-progress">
                             <progress value="${book.pagesCompleted}" max="${book.pageNumber}"></progress>
                             <div class="book-pages">
-                                <input type="number" value="${book.pagesCompleted}">
+                                <input type="number" id="current-page-number" value="${book.pagesCompleted}">
                                 <p>/</p>
                                 <input type="number" value="${book.pageNumber}">
                                 <p>pages read</p>
                             </div>
                             <div>
-                                <button>-1</button>
-                                <button>+1</button>
+                                <button id="decrease-btn">-1</button>
+                                <button id="increase-btn">+1</button>
                             </div>
                         </div>
                     </div>
@@ -100,4 +114,5 @@ function render() {
        contentArea.appendChild(card)
     }
 }
+books.push(new Book("what", "why", false, 139, 49))
 render()
