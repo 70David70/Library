@@ -39,17 +39,6 @@ nav h1 + div {
     gap: 2rem;
     font-size: var(--font-size);
 }
-.navigation-bar > div button {
-    border: none;
-    border-radius: 1px;
-    color: rgb(19, 12, 12);
-    font-size: 1rem;
-    background: none;
-}
-.navigation-bar > div button:hover{
-    font-size: larger;
-    color: gray;
-}
 
 footer {
     width: 100%;

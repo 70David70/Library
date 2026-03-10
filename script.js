@@ -74,7 +74,9 @@ inputForm.addEventListener('submit', function(e) {
     let file = input.uploadPic.files[0]
     let bookPicture = file ? URL.createObjectURL(file) : ""
     books.push(new Book(title, author, readStatus, pageNumber, pagesCompleted, bookPicture, bookPicture))
-    console.log(books);
+
+    document.querySelector("#popupBackground").classList.toggle("hidden")
+    inputForm.reset()
     render()
 })
 
