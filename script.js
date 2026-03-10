@@ -70,8 +70,10 @@ inputForm.addEventListener('submit', function(e) {
     let readStatus = input.isCompleted.checked
     let pageNumber = input.getBoxPagecount.value
     let pagesCompleted = 0
-    let bookPicture = input.uploadPic.value
-    books.push(new Book(title, author, readStatus, pageNumber, pagesCompleted, bookPicture))
+
+    let file = input.uploadPic.files[0]
+    let bookPicture = file ? URL.createObjectURL(file) : ""
+    books.push(new Book(title, author, readStatus, pageNumber, pagesCompleted, bookPicture, bookPicture))
     console.log(books);
     render()
 })
@@ -114,5 +116,4 @@ function render() {
        contentArea.appendChild(card)
     }
 }
-books.push(new Book("what", "why", false, 139, 49))
 render()
